@@ -1,0 +1,189 @@
+/* ========================================
+   CSS-variabler
+   ======================================== */
+
+/* Gemensamma färger, typsnitt, textstorlekar
+   och avstånd etc samlas här för att enkelt
+   kunna ändras på ett och samma ställe.
+
+   Clamp() används för att anpassa storlekar efter
+   skärmbredden inom ett angivet min- och maxvärde. */
+
+:root {
+  /* Färger */
+  --background: #dcaeae;
+  --text-color: #222;
+  --heading-color: #b3261e;
+  --intro-background: #eeeeee;
+  --white: #fff;
+
+  /* Typsnitt */
+  --font-family: Arial, Helvetica, sans-serif;
+
+  /* Textstorlekar */
+  --font-size-base: 1rem;
+  --font-size-h1: clamp(1.5rem, 2.5vw, 2rem);
+  --font-size-h2: clamp(1.25rem, 2vw, 1.5rem);
+
+  /* Radavstånd */
+  --line-height: 1.5;
+
+  /* Mellanrum */
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.25rem;
+  --space-xl: 1.5rem;
+  --space-2xl: 2rem;
+
+  /* Layout */
+  --page-max-width: 62.5rem;
+  --content-padding: clamp(1.5rem, 4vw, 3rem);
+  --gallery-gap: 1.25rem;
+}
+
+
+/* ========================================
+   Grundinställningar
+   ======================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--background);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height);
+}
+
+
+/* ========================================
+   Sidans layout
+   ======================================== */
+
+.page {
+  width: 100%;
+  max-width: var(--page-max-width); /* Max-width begränsar sidan */
+  margin-inline: auto; /* Auto centrerar sidan horisontellt när utrymme finns. */
+  background-color: var(--white);
+}
+
+
+/* ========================================
+   Hero-bild
+   ======================================== */
+
+.hero-image {
+  display: block; /* Tar bort det lilla mellanrummet under bilden. */
+  width: 100%;
+  height: 25rem;
+  object-fit: cover; /* Beskär bild vid behov utan att förvränga den. */
+}
+
+
+/* ========================================
+   Innehåll
+   ======================================== */
+
+.content {
+  padding: var(--content-padding);
+}
+
+
+/* ========================================
+   Rubriker
+   ======================================== */
+
+h1 {
+  margin: 0 0 var(--space-lg);
+  color: var(--heading-color);
+  font-size: var(--font-size-h1);
+}
+
+h2 {
+  margin: var(--space-2xl) 0 var(--space-sm);
+  font-size: var(--font-size-h2);
+}
+
+
+/* ========================================
+   Text och intro
+   ======================================== */
+
+p {
+  margin: 0 0 var(--space-sm);
+}
+
+.intro {
+  padding: 0.875rem var(--space-md);
+  background-color: var(--intro-background);
+}
+
+
+/* ========================================
+   Listor
+   ======================================== */
+
+ul,
+ol {
+  margin: var(--space-sm) 0 var(--space-xl);
+  padding-left: var(--space-xl); /* Ger plats åt punkter och siffror. */
+}
+
+li {
+  margin-bottom: var(--space-xs);
+}
+
+
+/* ========================================
+   Bildgalleri med CSS Grid
+   ======================================== */
+
+.image-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Skapar två lika stora kolumner. */
+  gap: var(--gallery-gap);
+}
+
+.image-gallery img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3; /* Ger samma proportioner på båda bilderna. */
+  object-fit: cover;
+}
+
+
+/* ========================================
+   Mobil layout
+   ======================================== */
+
+/* Reglerna gäller när viewporten är 37.5rem bred eller mindre. */
+@media (max-width: 37.5rem) {
+
+  :root {
+    --gallery-gap: 1rem;
+  }
+
+  /* Hero-bilden får lägre höjd på mobil. */
+  .hero-image {
+    height: 16.25rem;
+  }
+
+  /* Mindre padding för att ge mer plats för text på mindre skärmar. */
+  .content {
+    padding: var(--space-xl) var(--space-md) 2.5rem;
+  }
+
+  /* Bildgalleriet ändras från två kolumner till en. */
+  .image-gallery {
+    grid-template-columns: 1fr;
+  }
+}

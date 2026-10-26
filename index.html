@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enkelt recept på pannkakor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main class="page">
+
+    <!-- Header med responsiv hero-bild -->
+    <header>
+
+      <!-- picture väljer bild beroende på skärmbredd.
+           source används för mobil och img är standardbilden. -->
+      <picture>
+        <source
+          media="(max-width: 600px)"
+          srcset="images/hero-liten-pannkakor.jpg"
+        >
+        <img
+          class="hero-image"
+          src="images/hero-pannkakor.jpg"
+          alt="En hög med gyllene pannkakor på en röd tallrik"
+        >
+      </picture>
+
+    </header>
+
+    <!-- Allt textinnehåll ligger i samma container -->
+    <div class="content">
+
+      <!-- Rubrik och introduktion -->
+      <h1>Enkelt recept på pannkakor</h1>
+
+      <p class="intro">
+        Gör traditionella tunna pannkakor med detta enkla
+        och goda pannkaksrecept.
+      </p>
+
+      <!-- Ingredienser -->
+      <section>
+        <h2>Ingredienser</h2>
+        <p>För 4 portioner</p>
+
+        <ul>
+          <li>2 1/2 dl vetemjöl</li>
+          <li>1/2 tsk salt</li>
+          <li>6 dl mjölk</li>
+          <li>3 ägg</li>
+          <li>3 msk smör till stekning</li>
+          <li>Sylt, bär eller frukt till servering</li>
+        </ul>
+      </section>
+
+      <!-- Tillagning -->
+      <section>
+        <h2>Så här gör du</h2>
+
+        <ol>
+          <li>Blanda mjöl och salt i en bunke.</li>
+          <li>Vispa i hälften av mjölken till en slät smet.</li>
+          <li>Vispa sedan ner resten av mjölken och äggen.</li>
+          <li>Låt smeten vila i cirka 10 minuter.</li>
+          <li>
+            Smält smör i en stekpanna. Häll i lite smet
+            och grädda tunna pannkakor.
+          </li>
+          <li>Servera med sylt, bär eller frukt.</li>
+        </ol>
+      </section>
+
+      <!-- Serveringsförslag -->
+      <section>
+        <h2>Serveringsförslag</h2>
+
+        <div class="image-gallery">
+          <img
+            src="images/upplagg-pannkakor1.jpg"
+            alt="Vikta pannkakor på en tallrik med två skålar sås och färska örter"
+            loading="lazy"
+          >
+          <img
+            src="images/upplagg-pannkakor2.jpg"
+            alt="Tunna pannkakor staplade på ett fat, serverade med gräddfil och rom"
+            loading="lazy"
+          >
+        </div>
+      </section>
+
+    </div>
+  </main>
+</body>
+</html>
