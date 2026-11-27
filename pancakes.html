@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Laga klassiska tunna pannkakor med ett enkelt recept, ingredienslista och serveringsförslag.">
+  <title>Enkelt recept på pannkakor – Receptskafferit</title>
+
+  <!-- Load Source Sans 3 from Google Fonts. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Allows keyboard users to skip the navigation. -->
+  <a class="skip-link" href="#main-content">
+    Hoppa till huvudinnehållet
+  </a>
+
+  <!-- Shared site header. -->
+  <header class="site-header">
+    <div class="container header-layout">
+
+      <a
+        class="site-logo"
+        href="index.html"
+        aria-label="Receptskafferit, till startsidan"
+      >
+        RECEPTSKAFFERIT
+      </a>
+
+      <!-- Desktop navigation. -->
+      <nav class="main-nav" aria-label="Huvudnavigering">
+        <ul class="nav-list" role="list">
+          <li>
+            <a href="pancakes.html" aria-current="page">Recept</a>
+          </li>
+          <li>
+            <a href="index.html#recipes">Om sajten</a>
+          </li>
+          <li>
+            <a class="button button--small" href="share-recipe.html">
+              Dela recept
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Mobile navigation using native HTML details and summary. -->
+      <nav class="mobile-nav" aria-label="Mobilnavigering">
+        <details class="mobile-menu">
+
+          <summary aria-label="Öppna eller stäng menyn">
+            <span class="hamburger-icon" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </summary>
+
+          <ul class="mobile-menu__list" role="list">
+            <li>
+              <a href="pancakes.html" aria-current="page">Recept</a>
+            </li>
+            <li>
+              <a href="index.html#recipes">Om sajten</a>
+            </li>
+            <li>
+              <a class="button button--small" href="share-recipe.html">
+                Dela recept
+              </a>
+            </li>
+          </ul>
+
+        </details>
+      </nav>
+
+    </div>
+  </header>
+
+  <main
+    class="container recipe-main"
+    id="main-content"
+    tabindex="-1"
+  >
+
+    <article class="recipe-article">
+
+      <div class="recipe-intro-grid">
+
+        <!-- Picture selects a different image for smaller screens. -->
+        <picture class="recipe-picture">
+          <source
+            media="(max-width: 600px)"
+            srcset="images/pancakes-mobile.jpg"
+          >
+          <img
+            class="recipe-hero-image"
+            src="images/pancakes.jpg"
+            alt="En hög med gyllene pannkakor på en röd tallrik"
+          >
+        </picture>
+
+        <header class="recipe-intro">
+
+          <h1>Enkelt recept på pannkakor</h1>
+
+          <p class="intro">
+            Gör traditionella tunna pannkakor med detta enkla
+            och goda pannkaksrecept.
+          </p>
+
+          <!-- Recipe facts displayed as three cards. -->
+          <dl class="recipe-info">
+
+            <div>
+              <dt>Portioner</dt>
+              <dd>4</dd>
+            </div>
+
+            <div>
+              <dt>Tid</dt>
+              <dd>30 min</dd>
+            </div>
+
+            <div>
+              <dt>Svårighetsgrad</dt>
+              <dd>Lätt</dd>
+            </div>
+
+          </dl>
+
+        </header>
+      </div>
+
+      <div class="recipe-details-grid">
+
+        <section aria-labelledby="ingredients-title">
+
+          <h2 id="ingredients-title">Ingredienser</h2>
+          <p>För 4 portioner</p>
+
+          <!-- role="list" preserves list semantics when bullets
+               are removed by CSS. -->
+          <ul class="ingredients" role="list">
+
+            <li>
+              <label>
+                <input type="checkbox">
+                <span>2 1/2 dl vetemjöl</span>
+              </label>
+            </li>
+
+            <li>
+              <label>
+                <input type="checkbox">
+                <span>1/2 tsk salt</span>
+              </label>
+            </li>
+
+            <li>
+              <label>
+                <input type="checkbox">
+                <span>6 dl mjölk</span>
+              </label>
+            </li>
+
+            <li>
+              <label>
+                <input type="checkbox">
+                <span>3 ägg</span>
+              </label>
+            </li>
+
+            <li>
+              <label>
+                <input type="checkbox">
+                <span>3 msk smör till stekning</span>
+              </label>
+            </li>
+
+            <li>
+              <label>
+                <input type="checkbox">
+                <span>Sylt, bär eller frukt till servering</span>
+              </label>
+            </li>
+
+          </ul>
+        </section>
+
+        <!-- Ordered list keeps the preparation steps in sequence. -->
+        <section aria-labelledby="instructions-title">
+
+          <h2 id="instructions-title">Så här gör du</h2>
+
+          <ol class="instructions">
+            <li>Blanda mjöl och salt i en bunke.</li>
+            <li>Vispa i hälften av mjölken till en slät smet.</li>
+            <li>Vispa sedan ner resten av mjölken och äggen.</li>
+            <li>Låt smeten vila i cirka 10 minuter.</li>
+            <li>
+              Smält smör i en stekpanna. Häll i lite smet
+              och grädda tunna pannkakor.
+            </li>
+            <li>Servera med sylt, bär eller frukt.</li>
+          </ol>
+
+        </section>
+      </div>
+
+      <!-- Serving images use figure and figcaption. -->
+      <section
+        class="serving-section"
+        aria-labelledby="serving-title"
+      >
+
+        <h2 id="serving-title">Serveringsförslag</h2>
+
+        <div class="image-gallery">
+
+          <figure>
+            <img
+              src="images/pancakes-serving-1.jpg"
+              alt="Vikta pannkakor på en tallrik med två skålar sås och färska örter"
+              loading="lazy"
+            >
+            <figcaption>
+              Servera pannkakorna med sylt,
+              en krämig sås och färska örter.
+            </figcaption>
+          </figure>
+
+          <figure>
+            <img
+              src="images/pancakes-serving-2.jpg"
+              alt="Tunna pannkakor staplade på ett fat, serverade med gräddfil och rom"
+              loading="lazy"
+            >
+            <figcaption>
+              Prova en matigare variant med
+              gräddfil och rom.
+            </figcaption>
+          </figure>
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- Shared footer. -->
+  <footer class="site-footer">
+
+    <div class="container footer-layout">
+
+      <div class="footer-about">
+
+        <a class="site-logo site-logo--footer" href="index.html">
+          RECEPTSKAFFERIT
+        </a>
+
+        <p>Enkla vardagsrecept som alla kan laga.</p>
+
+      </div>
+
+      <!-- Footer navigation. -->
+      <nav class="footer-nav" aria-label="Receptkategorier i sidfoten">
+
+        <h2>Fler recept</h2>
+
+        <ul role="list">
+          <li><a href="#">Frukost</a></li>
+          <li><a href="#">Middag</a></li>
+          <li><a href="#">Efterrätt</a></li>
+          <li><a href="#">Fika</a></li>
+        </ul>
+
+      </nav>
+
+      <!-- Image credits and copyright. -->
+      <p class="footer-credit">
+        Bilder från
+        <a
+          href="https://unsplash.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Unsplash
+        </a>
+        · © 2026 Josefine Söderholm
+      </p>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>

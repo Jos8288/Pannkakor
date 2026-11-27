@@ -3,94 +3,262 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Enkelt recept på pannkakor</title>
+  <meta name="description" content="Upptäck enkla och goda recept för vardag och helg hos Receptskafferit.">
+  <title>Receptskafferit – Enkla recept för alla tillfällen</title>
+
+  <!-- Load Source Sans 3 from Google Fonts. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  >
+
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <main class="page">
 
-    <!-- Header med responsiv hero-bild -->
-    <header>
+  <!-- Allows keyboard users to skip the navigation. -->
+  <a class="skip-link" href="#main-content">
+    Hoppa till huvudinnehållet
+  </a>
 
-      <!-- picture väljer bild beroende på skärmbredd.
-           source används för mobil och img är standardbilden. -->
-      <picture>
-        <source
-          media="(max-width: 600px)"
-          srcset="images/hero-liten-pannkakor.jpg"
-        >
-        <img
-          class="hero-image"
-          src="images/hero-pannkakor.jpg"
-          alt="En hög med gyllene pannkakor på en röd tallrik"
-        >
-      </picture>
+  <!-- Shared site header. -->
+  <header class="site-header">
+    <div class="container header-layout">
 
-    </header>
+      <a
+        class="site-logo"
+        href="index.html"
+        aria-label="Receptskafferit, till startsidan"
+      >
+        RECEPTSKAFFERIT
+      </a>
 
-    <!-- Allt textinnehåll ligger i samma container -->
-    <div class="content">
-
-      <!-- Rubrik och introduktion -->
-      <h1>Enkelt recept på pannkakor</h1>
-
-      <p class="intro">
-        Gör traditionella tunna pannkakor med detta enkla
-        och goda pannkaksrecept.
-      </p>
-
-      <!-- Ingredienser -->
-      <section>
-        <h2>Ingredienser</h2>
-        <p>För 4 portioner</p>
-
-        <ul>
-          <li>2 1/2 dl vetemjöl</li>
-          <li>1/2 tsk salt</li>
-          <li>6 dl mjölk</li>
-          <li>3 ägg</li>
-          <li>3 msk smör till stekning</li>
-          <li>Sylt, bär eller frukt till servering</li>
-        </ul>
-      </section>
-
-      <!-- Tillagning -->
-      <section>
-        <h2>Så här gör du</h2>
-
-        <ol>
-          <li>Blanda mjöl och salt i en bunke.</li>
-          <li>Vispa i hälften av mjölken till en slät smet.</li>
-          <li>Vispa sedan ner resten av mjölken och äggen.</li>
-          <li>Låt smeten vila i cirka 10 minuter.</li>
+      <!-- Desktop navigation. -->
+      <nav class="main-nav" aria-label="Huvudnavigering">
+        <ul class="nav-list" role="list">
           <li>
-            Smält smör i en stekpanna. Häll i lite smet
-            och grädda tunna pannkakor.
+            <a href="pancakes.html">Recept</a>
           </li>
-          <li>Servera med sylt, bär eller frukt.</li>
-        </ol>
-      </section>
+          <li>
+            <a href="index.html#recipes">Om sajten</a>
+          </li>
+          <li>
+            <a class="button button--small" href="share-recipe.html">
+              Dela recept
+            </a>
+          </li>
+        </ul>
+      </nav>
 
-      <!-- Serveringsförslag -->
-      <section>
-        <h2>Serveringsförslag</h2>
+      <!-- Mobile navigation using native HTML details and summary. -->
+      <nav class="mobile-nav" aria-label="Mobilnavigering">
+        <details class="mobile-menu">
 
-        <div class="image-gallery">
-          <img
-            src="images/upplagg-pannkakor1.jpg"
-            alt="Vikta pannkakor på en tallrik med två skålar sås och färska örter"
-            loading="lazy"
-          >
-          <img
-            src="images/upplagg-pannkakor2.jpg"
-            alt="Tunna pannkakor staplade på ett fat, serverade med gräddfil och rom"
-            loading="lazy"
-          >
-        </div>
-      </section>
+          <summary aria-label="Öppna eller stäng menyn">
+            <span class="hamburger-icon" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </summary>
+
+          <ul class="mobile-menu__list" role="list">
+            <li>
+              <a href="pancakes.html">Recept</a>
+            </li>
+            <li>
+              <a href="index.html#recipes">Om sajten</a>
+            </li>
+            <li>
+              <a class="button button--small" href="share-recipe.html">
+                Dela recept
+              </a>
+            </li>
+          </ul>
+
+        </details>
+      </nav>
 
     </div>
+  </header>
+
+  <main id="main-content" tabindex="-1">
+
+    <section
+      class="home-hero container"
+      aria-labelledby="welcome-title"
+    >
+
+      <img
+        class="home-hero__image"
+        src="images/home-hero.jpg"
+        alt="Flera färgglada maträtter med grönsaker på ett ljust bord"
+        fetchpriority="high"
+      >
+
+      <div class="home-hero__content">
+
+        <h1 id="welcome-title">
+          Välkommen till Receptskafferit
+        </h1>
+
+        <p>
+          Upptäck enkla och goda recept för både vardag och helg.
+          Hitta nya favoriter och låt matlagningen bli dagens höjdpunkt.
+        </p>
+
+        <a class="button" href="#recipes">
+          Utforska recept
+        </a>
+
+      </div>
+
+    </section>
+
+    <!-- Recipe categories. -->
+    <section
+      class="container home-categories"
+      aria-label="Receptkategorier"
+    >
+
+      <!-- Placeholder links for future category pages. -->
+      <ul class="category-list" role="list">
+        <li>
+          <a class="category-tag" href="#">Frukost</a>
+        </li>
+        <li>
+          <a class="category-tag" href="#">Middag</a>
+        </li>
+        <li>
+          <a class="category-tag" href="#">Efterrätt</a>
+        </li>
+        <li>
+          <a class="category-tag" href="#">Fika</a>
+        </li>
+      </ul>
+
+    </section>
+
+    <section
+      class="container home-recipes"
+      id="recipes"
+      aria-labelledby="recipes-title"
+    >
+
+      <h2 id="recipes-title">Utvalda recept</h2>
+
+      <div class="recipe-grid">
+
+        <!-- Pancake recipe card. -->
+        <article class="recipe-card">
+          <a class="recipe-card__link" href="pancakes.html">
+
+            <img
+              src="images/pancakes.jpg"
+              alt="En hög med gyllene pannkakor på en röd tallrik"
+              loading="lazy"
+            >
+
+            <div class="recipe-card__content">
+              <h3>Pannkakor</h3>
+              <p>30 min · Frukost</p>
+            </div>
+
+          </a>
+        </article>
+
+        <!-- Tomato pasta recipe card. -->
+        <article class="recipe-card">
+
+          <a class="recipe-card__link" href="pancakes.html">
+
+            <img
+              src="images/tomato-pasta.jpg"
+              alt="Tagliatelle med tomatsås och färska örter på en grå tallrik"
+              loading="lazy"
+            >
+
+            <div class="recipe-card__content">
+              <h3>Krämig tomatpasta</h3>
+              <p>25 min · Middag</p>
+            </div>
+
+          </a>
+        </article>
+
+        <!-- Blueberry muffin recipe card. -->
+        <article class="recipe-card">
+
+          <a class="recipe-card__link" href="pancakes.html">
+
+            <img
+              src="images/blueberry-muffins.jpg"
+              alt="Nygräddade blåbärsmuffins på ett galler med färska blåbär"
+              loading="lazy"
+            >
+
+            <div class="recipe-card__content">
+              <h3>Blåbärsmuffins</h3>
+              <p>35 min · Fika</p>
+            </div>
+
+          </a>
+        </article>
+
+      </div>
+
+    </section>
+
   </main>
+
+  <!-- Shared footer. -->
+  <footer class="site-footer">
+
+    <div class="container footer-layout">
+
+      <div class="footer-about">
+
+        <a class="site-logo site-logo--footer" href="index.html">
+          RECEPTSKAFFERIT
+        </a>
+
+        <p>Enkla vardagsrecept som alla kan laga.</p>
+
+      </div>
+
+      <!-- Footer navigation. -->
+      <nav class="footer-nav" aria-label="Receptkategorier i sidfoten">
+
+        <h2>Fler recept</h2>
+
+        <ul role="list">
+          <li><a href="#">Frukost</a></li>
+          <li><a href="#">Middag</a></li>
+          <li><a href="#">Efterrätt</a></li>
+          <li><a href="#">Fika</a></li>
+        </ul>
+
+      </nav>
+
+      <!-- Image credits and copyright. -->
+      <p class="footer-credit">
+        Bilder från
+        <a
+          href="https://unsplash.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Unsplash
+        </a>
+        · © 2026 Josefine Söderholm
+      </p>
+
+    </div>
+
+  </footer>
+
 </body>
 </html>

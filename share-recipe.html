@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dela dina favoritrecept med Receptskafferit.">
+  <title>Dela recept – Receptskafferit</title>
+
+  <!-- Load Source Sans 3 from Google Fonts. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Allows keyboard users to skip the navigation. -->
+  <a class="skip-link" href="#main-content">
+    Hoppa till huvudinnehållet
+  </a>
+
+  <!-- Shared site header. -->
+  <header class="site-header">
+    <div class="container header-layout">
+
+      <a
+        class="site-logo"
+        href="index.html"
+        aria-label="Receptskafferit, till startsidan"
+      >
+        RECEPTSKAFFERIT
+      </a>
+
+      <!-- Desktop navigation. -->
+      <nav class="main-nav" aria-label="Huvudnavigering">
+        <ul class="nav-list" role="list">
+          <li>
+            <a href="pancakes.html">Recept</a>
+          </li>
+          <li>
+            <a href="index.html#recipes">Om sajten</a>
+          </li>
+          <li>
+            <a
+              class="button button--small"
+              href="share-recipe.html"
+              aria-current="page"
+            >
+              Dela recept
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Mobile navigation using native HTML details and summary. -->
+      <nav class="mobile-nav" aria-label="Mobilnavigering">
+        <details class="mobile-menu">
+
+          <summary aria-label="Öppna eller stäng menyn">
+            <span class="hamburger-icon" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </summary>
+
+          <ul class="mobile-menu__list" role="list">
+            <li>
+              <a href="pancakes.html">Recept</a>
+            </li>
+            <li>
+              <a href="index.html#recipes">Om sajten</a>
+            </li>
+            <li>
+              <a
+                class="button button--small"
+                href="share-recipe.html"
+                aria-current="page"
+              >
+                Dela recept
+              </a>
+            </li>
+          </ul>
+
+        </details>
+      </nav>
+
+    </div>
+  </header>
+
+  <main
+    class="container share-page"
+    id="main-content"
+    tabindex="-1"
+  >
+
+    <!-- Introduction to the recipe submission form. -->
+    <div class="share-content">
+
+      <h1>Dela ditt recept</h1>
+
+      <p>
+        Har du ett favoritrecept som du vill dela med dig av?
+        Fyll i formuläret och inspirera andra till god matlagning!
+      </p>
+
+      <p class="form-required-note">
+        Fält markerade med * är obligatoriska.
+      </p>
+
+      <form
+        class="recipe-form"
+        action="share-recipe.html"
+        method="get"
+      >
+
+        <!-- General information about the recipe. -->
+        <fieldset class="form-section">
+
+          <legend>Om receptet</legend>
+
+          <div class="form-field">
+            <label for="recipe-name">
+              Receptets namn *
+            </label>
+
+            <input
+              type="text"
+              id="recipe-name"
+              name="recipe-name"
+              placeholder="Till exempel: Farmors äppelpaj"
+              required
+            >
+          </div>
+
+          <div class="form-field">
+            <label for="recipe-category">
+              Kategori
+            </label>
+
+            <select
+              id="recipe-category"
+              name="recipe-category"
+            >
+              <option value="">Välj kategori</option>
+              <option value="breakfast">Frukost</option>
+              <option value="dinner">Middag</option>
+              <option value="dessert">Efterrätt</option>
+              <option value="fika">Fika</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+
+            <div class="form-field">
+              <label for="recipe-time">
+                Tid i minuter
+              </label>
+
+              <input
+                type="number"
+                id="recipe-time"
+                name="recipe-time"
+                min="1"
+                step="1"
+                placeholder="30"
+              >
+            </div>
+
+            <div class="form-field">
+              <label for="recipe-servings">
+                Antal portioner
+              </label>
+
+              <input
+                type="number"
+                id="recipe-servings"
+                name="recipe-servings"
+                min="1"
+                step="1"
+                placeholder="4"
+              >
+            </div>
+
+          </div>
+
+        </fieldset>
+
+        <fieldset class="form-section">
+
+          <legend>Svårighetsgrad</legend>
+
+          <div class="radio-group">
+
+            <label>
+              <input
+                type="radio"
+                name="difficulty"
+                value="easy"
+              >
+              Lätt
+            </label>
+
+            <label>
+              <input
+                type="radio"
+                name="difficulty"
+                value="medium"
+              >
+              Medel
+            </label>
+
+            <label>
+              <input
+                type="radio"
+                name="difficulty"
+                value="hard"
+              >
+              Svår
+            </label>
+
+          </div>
+
+        </fieldset>
+
+        <!-- Ingredients and preparation instructions. -->
+        <fieldset class="form-section">
+
+          <legend>Receptet</legend>
+
+          <div class="form-field">
+            <label for="recipe-ingredients">
+              Ingredienser *
+            </label>
+
+            <textarea
+              id="recipe-ingredients"
+              name="recipe-ingredients"
+              rows="5"
+              placeholder="Skriv en ingrediens per rad..."
+              required
+            ></textarea>
+          </div>
+
+          <div class="form-field">
+            <label for="recipe-instructions">
+              Gör så här *
+            </label>
+
+            <textarea
+              id="recipe-instructions"
+              name="recipe-instructions"
+              rows="6"
+              placeholder="Beskriv hur man lagar receptet, steg för steg..."
+              required
+            ></textarea>
+          </div>
+
+        </fieldset>
+
+        <!-- Information about the person sharing the recipe. -->
+        <fieldset class="form-section">
+
+          <legend>Om dig</legend>
+
+          <div class="form-field">
+            <label for="sender-name">
+              Ditt namn
+            </label>
+
+            <input
+              type="text"
+              id="sender-name"
+              name="sender-name"
+              autocomplete="name"
+              placeholder="Ditt namn"
+            >
+          </div>
+
+          <div class="form-field">
+            <label for="sender-email">
+              E-postadress *
+            </label>
+
+            <input
+              type="email"
+              id="sender-email"
+              name="sender-email"
+              autocomplete="email"
+              placeholder="namn@exempel.se"
+              aria-describedby="email-error"
+              required
+            >
+
+            <!-- CSS will display this message when
+                 the email field is user-invalid. -->
+            <p class="form-error" id="email-error">
+              Ange en giltig e-postadress.
+            </p>
+          </div>
+
+        </fieldset>
+
+        <!-- Submit button uses the site's existing button style. -->
+        <button class="button" type="submit">
+          Skicka recept
+        </button>
+
+      </form>
+
+    </div>
+
+  </main>
+
+  <!-- Shared footer. -->
+  <footer class="site-footer">
+
+    <div class="container footer-layout">
+
+      <div class="footer-about">
+
+        <a class="site-logo site-logo--footer" href="index.html">
+          RECEPTSKAFFERIT
+        </a>
+
+        <p>Enkla vardagsrecept som alla kan laga.</p>
+
+      </div>
+
+      <!-- Footer navigation. -->
+      <nav class="footer-nav" aria-label="Receptkategorier i sidfoten">
+
+        <h2>Fler recept</h2>
+
+        <ul role="list">
+          <li><a href="#">Frukost</a></li>
+          <li><a href="#">Middag</a></li>
+          <li><a href="#">Efterrätt</a></li>
+          <li><a href="#">Fika</a></li>
+        </ul>
+
+      </nav>
+
+      <!-- Image credits and copyright. -->
+      <p class="footer-credit">
+        Bilder från
+        <a
+          href="https://unsplash.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Unsplash
+        </a>
+        · © 2026 Josefine Söderholm
+      </p>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
